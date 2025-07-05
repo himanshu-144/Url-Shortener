@@ -8,11 +8,6 @@ export async function POST(req:Request){
   return NextResponse.json({shortUrl},{status : 201});
 }
 
-export async function GET(){
-    const shortenerService = new UrlShortenerServices();
-    const result = await shortenerService.getAllUrls();
-    return NextResponse.json({result});
-}
 
 
 

@@ -21,7 +21,7 @@ export default class UrlShortenerServices{
             shortUrl = nanoid();
             url = await this.urlRepository.getUrlByShortUrl(shortUrl);
         }
-        await this.urlRepository.createUrl(originalUrl, shortUrl);
+        await this.urlRepository.createUrl(originalUrl, `urls/${shortUrl}`);
         return shortUrl;
     }
 
@@ -32,5 +32,6 @@ export default class UrlShortenerServices{
      async getUrlByShortUrl(shortUrl: string) {
         return await this.urlRepository.getUrlByShortUrl(shortUrl);
     }
+    
     
 }
